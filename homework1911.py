@@ -14,7 +14,7 @@ fname = "Georgi\n"
 sname = "Krastev\n"
 lname = "Krastev"
 
-print(fname, sname, lname)
+print(fname + sname + lname)
 
 # 3
 
