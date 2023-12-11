@@ -1,24 +1,25 @@
 #1 Напишете програма, която при въведен ден, месец и година проверява дали датата е валидна.
 # method 1
-# dm = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
-# datecheck = input("DD/MM/YYYY: ").split("/")
-# d = int(datecheck[0])
-# m = int(datecheck[1])
-# y = int(datecheck[2])
-# if (1 <= d <= 31) and (1 <= m <= 12):
-#     if d <= dm[m]:
-#         if d == 29 and m == 2:
-#             if y % 4 == 0 or y % 400 == 0 and y % 100 != 0:
-#                 print("Валидна дата")
-#                 exit()
-#             else:
-#                 print("Невалидна дата")
-#                 exit()
-#         print("Валидна дата")
-#     else:
-#         print("Невалидна дата")
-# else:
-#     print("Невалидна дата")
+
+dm = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+datecheck = input("DD/MM/YYYY: ").split("/")
+d = int(datecheck[0])
+m = int(datecheck[1])
+y = int(datecheck[2])
+if (1 <= d <= 31) and (1 <= m <= 12):
+    if d <= dm[m]:
+        if d == 29 and m == 2:
+            if y % 4 == 0 or y % 400 == 0 and y % 100 != 0:
+                print("Валидна дата")
+                exit()
+            else:
+                print("Невалидна дата")
+                exit()
+        print("Валидна дата")
+    else:
+        print("Невалидна дата")
+else:
+    print("Невалидна дата")
 
 # method 2
 
