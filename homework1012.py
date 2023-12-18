@@ -1,38 +1,38 @@
 #1 Напишете програма, която при въведен ден, месец и година проверява дали датата е валидна.
 # method 1
 
-dm = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
-datecheck = input("DD/MM/YYYY: ").split("/")
-d = int(datecheck[0])
-m = int(datecheck[1])
-y = int(datecheck[2])
-if (1 <= d <= 31) and (1 <= m <= 12):
-    if d <= dm[m]:
-        if d == 29 and m == 2:
-            if y % 4 == 0 or y % 400 == 0 and y % 100 != 0:
-                print("Валидна дата")
-                exit()
-            else:
-                print("Невалидна дата")
-                exit()
-        print("Валидна дата")
-    else:
-        print("Невалидна дата")
-else:
-    print("Невалидна дата")
+# dm = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+# datecheck = input("DD/MM/YYYY: ").split("/")
+# d = int(datecheck[0])
+# m = int(datecheck[1])
+# y = int(datecheck[2])
+# if (1 <= d <= 31) and (1 <= m <= 12):
+#     if d <= dm[m]:
+#         if d == 29 and m == 2:
+#             if y % 4 == 0 or y % 400 == 0 and y % 100 != 0:
+#                 print("Валидна дата")
+#                 exit()
+#             else:
+#                 print("Невалидна дата")
+#                 exit()
+#         print("Валидна дата")
+#     else:
+#         print("Невалидна дата")
+# else:
+#     print("Невалидна дата")
 
-# method 2
+# # method 2
 
-import datetime
-checkd = input("DD/MM/YYYY: ").split("/")
-d = int(checkd[0])
-m = int(checkd[1])
-y = int(checkd[2])
-try:
-    dcheck = datetime.datetime(y,m,d)
-    print("Валидна дата")
-except:
-    print("Невалидна дата")
+# import datetime
+# checkd = input("DD/MM/YYYY: ").split("/")
+# d = int(checkd[0])
+# m = int(checkd[1])
+# y = int(checkd[2])
+# try:
+#     dcheck = datetime.datetime(y,m,d)
+#     print("Валидна дата")
+# except:
+#     print("Невалидна дата")
 
 #2 Напишете програма, която генерира 100 текстови файла, които имена започват със случайни цифри между 1 и 9. След като
 # сте ги генерирали създайте 9 папки наименувани с цифри между 1 и 9 и преместете всички файлове започващи със
@@ -66,7 +66,17 @@ print("9 папки са създадени...")
 for fl in l:
     nf = str(fl[0])
     os.rename(f"{fl}", f"{nf}/{fl}" )
-print("Файловете са преместени...")
+    
+print("Файловете са преместени...\n" + "Структура:")
+
+def incr():
+    global i
+    i += 1
+    return i
+for folder in range(1, 10):
+    i = 0
+    files = [f"       {incr()}.| \x1b[38;5;27m{f}\u001b[0m\n" for f in os.listdir(str(folder))]
+    print(f"\x1b[1;31mПапка \"{folder}\":\u001b[0m\n" + "".join(files))
 
 for x in range(1,10):
     if os.path.exists(str(x)):
