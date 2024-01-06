@@ -1,4 +1,4 @@
-#1 Напишете функция, която получава три числа (int) и връща (return) най-малкото.
+# 1 Напишете функция, която получава три числа (int) и връща (return) най-малкото.
 # • Принтирайте резултата на конзолата.
 # • Използвайте подходящо име за функцията.
 
@@ -29,13 +29,13 @@ def substract(a, b):
     result = a - b
     return result
 
-def add_and_subtract():
-    a = int(input("Num 1: "))
-    b = int(input("Num 2: "))
-    c = int(input("Num 3: "))
+def add_and_subtract(a, b, c):
     print(substract(sum_numbers(a,b), c))
 
-add_and_subtract()
+a = int(input("Num 1: "))
+b = int(input("Num 2: "))
+c = int(input("Num 3: "))
+add_and_subtract(a, b, c)
 
 # 3 Напишите програма, която получава последователност от цели числа, разделени
 # от празно място (single space).
@@ -48,8 +48,7 @@ def even_sort(num):
     else:
         return False
     
-def result():
-    numbers = input("Numbers: ")
+def result(numbers):
     numbers = [int(num) for num in numbers.split(" ") if num and num.lstrip("-").isdigit()]
     if numbers == []:
         print("No numbers in this list! Process terminated!")
@@ -57,22 +56,23 @@ def result():
     evens = filter(even_sort, numbers)
     return [even for even in evens]
 
-print(result())
+nums = input("Numbers: ")
+print(result(nums))
 
 # 4 Напишите програма, която получава последователност от цели числа, разделени
 # от празно място (single space).
 # • Принтирайте сортиран (sorted) лист от числа във възходящ ред (ascending order).
 # • Използвайте sorted()
 
-def num_sorter():
-    numbers = input("Numbers: ")
+def num_sorter(numbers):
     numbers = [int(num) for num in numbers.split(" ") if num and num.lstrip("-").isdigit()]
     if numbers == []:
         print("No numbers in this list! Process terminated!")
         exit()
     return sorted(numbers)
 
-print(num_sorter())
+nums = input("Numbers: ")
+print(num_sorter(nums))
 
 # 5 Напишите програма, която получава лист от цели числа, разделени от празно
 # място (single space).
