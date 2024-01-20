@@ -21,6 +21,8 @@
 # "value is not a float"
 # "wrong type"
 
+# pip install roman
+
 import roman
 
 class Integer:
@@ -28,22 +30,26 @@ class Integer:
         self.value = value
     def from_float(float_value):
         if isinstance(float_value, float) == True:
-            return "value is float"
+            return int(float_value)
         else:
             return "value is not a float"
+       
+            
 
     def from_roman(value):
         number = value.upper()
         try:
             return Integer(int(roman.fromRoman(number)))
         except:
-            return Integer("Wrong number!!!")
+            return Integer("Invalid roman numbar!")
 
     def from_string(value):
-        value = str(value)
-        try:
-            return int(value)
-        except:
+        if isinstance(value, str) == True:
+            try:
+                return int(value)
+            except:
+                return "wrong type"
+        else:
             return "wrong type"
         
 first_num = Integer(10)
