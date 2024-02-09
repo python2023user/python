@@ -37,7 +37,6 @@ def Insertion_Sort(f):
             l[j + 1] = l[j]
             j -= 1
         l[j + 1] = value
-
     return l
 
 l = [3, 1, 5, 15, 8, 6, 7, 2, 4, 11, 9, 14, 10, 13, 12]
@@ -61,8 +60,9 @@ def binary_search(l,i):
         return binary_search(l[len(l)//2:], i)
     elif l[len(l)//2] > i:
         return binary_search(l[:len(l) // 2], i)
+
 x = []
-for i in range(1,101):
+for _ in range(1,101):
     x.append(random.randrange(1,1001))
 x.sort()
 search_number = random.randrange(1,1001)
